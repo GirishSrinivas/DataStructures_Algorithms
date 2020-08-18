@@ -24,18 +24,18 @@ public class MirrorWordsApp {
                 String w1 = word1.substring(i) + word1.substring(index, i);
                 String w2 = word2.substring(i) + word2.substring(index, i);
 
-                if(mirrorWordCount.containsKey(w1)) {
-                    int count = mirrorWordCount.get(w1) + 1;
-                    mirrorWordCount.put(w1, count);
+                if(mirrorWordCount.containsKey(w1.trim())) {
+                    int count = mirrorWordCount.get(w1.trim()) + 1;
+                    mirrorWordCount.put(w1.trim(), count);
                 } else {
-                    mirrorWordCount.put(w1, 0);
+                    mirrorWordCount.put(w1.trim(), 1);
                 }
 
-                if(mirrorWordCount.containsKey(w2)) {
-                    int count = mirrorWordCount.get(w2) + 1;
-                    mirrorWordCount.put(w2, count);
+                if(mirrorWordCount.containsKey(w2.trim())) {
+                    int count = mirrorWordCount.get(w2.trim()) + 1;
+                    mirrorWordCount.put(w2.trim(), count);
                 } else {
-                    mirrorWordCount.put(w2, 0);
+                    mirrorWordCount.put(w2.trim(), 1);
                 }
 
                 Set<Integer> values = new HashSet<Integer>(mirrorWordCount.values());
